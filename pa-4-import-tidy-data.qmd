@@ -73,13 +73,35 @@ Go ahead and read in the data, calling it `youth`. What do you notice?
 
 youth <- read_csv("Data_RAw/YRBS2015.csv",
                   skip = 1,
-                  na = c('.','N/A'))
+                  na = c('.','N/A'),
+                  col_type = cols(AgeCat = col_number(),
+                                  Grade = col_number(),
+                                  `Perception of weight` = col_factor(levels = 
+                                                                        c("Very underweight",
+                                                                          "Slightly underweight", 
+                                                                          "About the right weight", 
+                                                                          "Slightly overweight", 
+                                                                          "Very overweight")),
+                                  Gender = col_character(),
+                                  `Height in meters` = col_double(),
+                                  `Weight in kilograms` = col_double(),
+                                  `Body Mass Index` = col_double(),
+                                  `BMI percentile` = col_double(),
+                                  `Fruit eating` = col_character(),
+                                  `Salad eating` = col_character(),
+                                  `Other vegetable eating` = col_character(),
+                                  `Soda drinking` = col_character(),
+                                  `Breakfast eating` = col_character(),
+                                  `Physical activity >= 5 days` = col_number(),
+                                  `Television watching` = col_character(),
+                                  `Sports team participation` = col_number(),
+                                  .default = col_skip()))
 head(youth)
 ```
 
 Describe some of the issues you notice in the data:
 
-> Difficult variable names, a lot of N/As, and a lot of empty boxes within the data. A lot of variables have names that are either overly complicated or entirely unusable.
+> Difficult variable names, a lot of N/As, and a lot of empty boxes within the data. A lot of variables have names that are either overly complicated or entirely unusable.  
 
 ### Step 2: Skip the First Row
 
