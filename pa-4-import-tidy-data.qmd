@@ -156,7 +156,7 @@ Now that the data is clean, you can add `eval: false` to the prior code chunks a
 ```{r}
 #| label: read-clean-data
 write_csv(youth, file = 'Data_CLEAN/youth_clean.csv')
-youth_clean <- ('Data_CLEAN/youth_clean.csv')
+youth_clean <- read_csv('Data_CLEAN/youth_clean.csv')
 ```
 
 Why do we keep the code for the data cleaning but set the code chunks to `eval: false`?
@@ -183,11 +183,11 @@ youth_clean |>
 
 What do the two graphs tell you about the missingness in the data (i.e., which variables are missing the most values and which combinations of variables are missing the most together)?
 
-> Insert Answer Here
+> There is a lot of missing data for soda_drinking, physical_acticity_5_days, and breakfast_eating, and there is a lot of overlap in missing data for all 3 variables.  
 
 How does the missingness of the data impact what variables you might choose to analyze? Why?
 
-> Insert Answer Here
+> You may not want to analyze data with lots of missing values, as the holes in the data may make your analysis less accurate.  
 
 <!-- Change roles (Developer becomes Coder)! -->
 
